@@ -7,7 +7,7 @@ resource "aws_cloudfront_origin_access_control" "access_control" {
 }
 
 resource "aws_cloudfront_distribution" "main_distribution" {
-  count               = (var.bucket_origin_id != "" && var.regional_domain != "") ? 1 : 0
+  count = (var.bucket_origin_id != "" && var.regional_domain != "") ? 1 : 0
 
   enabled             = true
   default_root_object = "index.html"
