@@ -33,3 +33,14 @@ variable "owner" {
 }
 
 # OPTIONAL VARIABLES
+variable "bucket_origin_id" {
+  description = "Bucket origin id"
+  type        = string
+  default     = ""
+}
+
+variable "regional_domain" {
+  description = "Public bucket domain name"
+  type        = string
+  default     = ""
+}
