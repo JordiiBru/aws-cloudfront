@@ -1,6 +1,6 @@
 
 locals {
-  create_cf_distribution = ((var.bucket_origin_id != "") && (var.regional_domain != ""))
+  create_cf_distribution = ((var.bucket_origin_id != "" && var.regional_domain != ""))
 }
 
 resource "aws_cloudfront_origin_access_control" "access_control" {
