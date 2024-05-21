@@ -1,4 +1,8 @@
 
+locals {
+  create_cf_distribution = var.bucket_origin_id != "" && var.regional_domain != ""
+}
+
 resource "aws_cloudfront_origin_access_control" "access_control" {
   name                              = var.regional_domain
   origin_access_control_origin_type = "s3"
@@ -7,7 +11,7 @@ resource "aws_cloudfront_origin_access_control" "access_control" {
 }
 
 resource "aws_cloudfront_distribution" "main_distribution" {
-  count = (var.bucket_origin_id != "" && var.regional_domain != "") ? 1 : 0
+  count = local.create_cf_distribution ? 1 : 0
 
   enabled             = true
   default_root_object = "index.html"
