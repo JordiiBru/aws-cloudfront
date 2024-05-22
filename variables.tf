@@ -44,3 +44,5 @@ variable "regional_domain" {
   type        = string
   default     = ""
 }
+
+variable "cert_id" {}
