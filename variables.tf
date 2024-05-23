@@ -45,4 +45,8 @@ variable "regional_domain" {
   default     = ""
 }
 
-variable "cert_id" {}
+variable "cert_id" {
+  description = "SSL Certificate arn to attach on the cloudfront distribution"
+  type        = string
+  default     = ""
+}
