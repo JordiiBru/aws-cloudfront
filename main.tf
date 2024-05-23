@@ -4,7 +4,7 @@ resource "aws_cloudfront_origin_access_control" "access_control" {
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
 
-  provider        = aws.us-east-1-cf
+  #provider        = aws.us-east-1-cf
 }
 
 resource "aws_cloudfront_distribution" "main_distribution" {
@@ -50,7 +50,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
     minimum_protocol_version = "TLSv1.2_2021"
   }
 
-  provider        = aws.us-east-1-cf
+  #provider        = aws.us-east-1-cf
 
   tags = {
     terraform = true
