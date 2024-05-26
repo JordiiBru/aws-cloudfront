@@ -32,7 +32,7 @@ variable "owner" {
   }
 }
 
-# OPTIONAL VARIABLES
+# CUSTOM VARIABLES
 variable "bucket_origin_id" {
   description = "Bucket origin id"
   type        = string
@@ -40,7 +40,7 @@ variable "bucket_origin_id" {
 }
 
 variable "regional_domain" {
-  description = "Public bucket domain name"
+  description = "Bucket domain name"
   type        = string
   default     = ""
 }

@@ -3,8 +3,6 @@ resource "aws_cloudfront_origin_access_control" "access_control" {
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
-
-  #provider        = aws.us-east-1-cf
 }
 
 resource "aws_cloudfront_distribution" "main_distribution" {
@@ -17,7 +15,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
     origin_id                = var.regional_domain
   }
 
-   aliases = [ "${var.stage}.jordibru.cloud" ]
+  aliases = [ "${var.stage}.jordibru.cloud" ]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -51,8 +49,6 @@ resource "aws_cloudfront_distribution" "main_distribution" {
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }
-
-  #provider        = aws.us-east-1-cf
 
   tags = {
     terraform = true
