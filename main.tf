@@ -14,7 +14,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
   origin {
     domain_name              = var.regional_domain
     origin_access_control_id = aws_cloudfront_origin_access_control.access_control.id
-    origin_id                = var.bucket_origin_id
+    origin_id                = var.regional_domain
   }
 
   default_cache_behavior {
