@@ -15,7 +15,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
     origin_id                = var.regional_domain
   }
 
-  aliases = [ "${var.stage}.jordibru.cloud" ]
+  aliases = [ var.domain_name ]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]

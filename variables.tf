@@ -50,3 +50,13 @@ variable "cert_id" {
   type        = string
   default     = ""
 }
+
+variable "domain_name" {
+  description = "Name of the domain"
+  type        = string
+  default     = ""
+  validation {
+    condition     = length(var.domain_name) >= 3
+    error_message = "You must define a domain name."
+  }
+}
