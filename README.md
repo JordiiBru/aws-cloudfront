@@ -31,7 +31,7 @@ Terraform module to create a CloudFront distribution for a hosting S3 bucket wit
 
 ```hcl
 module "cf_distr" {
-  source = "../"
+  source = "git@github.com:JordiiBru/aws-cloudfront.git?ref=[TAG]"
 
   # Required variables
   stage   = "dev"
