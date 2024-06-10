@@ -15,6 +15,7 @@ Terraform module to create a CloudFront distribution for a hosting S3 bucket wit
 | Name               | Description                               | Type   | Default              |
 |--------------------|-------------------------------------------|--------|----------------------|
 | `bucket_origin_id` | The ID of the hosting S3 bucket origin.   | string | `""`                 |
+| `website_endpoint` | S3 bucket website endpoint.   | string | `""`                 |
 | `regional_domain`  | The regional domain name of the hosting S3 bucket. | string | `""`                 |
 | `cert_id`          | The ARN of the SSL certificate to attach to the CloudFront distribution. | string | `""`                 |
 | `domain_name`      | The name of the domain.                   | string | `""`                 |
