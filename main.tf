@@ -10,9 +10,9 @@ resource "aws_cloudfront_distribution" "main_distribution" {
   default_root_object = "index.html"
 
   origin {
-    domain_name              = var.regional_domain
+    domain_name              = var.website_endpoint
     origin_access_control_id = aws_cloudfront_origin_access_control.access_control.id
-    origin_id                = var.website_endpoint
+    origin_id                = var.regional_domain
   }
 
   aliases = [var.domain_name]
