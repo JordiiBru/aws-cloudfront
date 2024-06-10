@@ -12,7 +12,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
   origin {
     domain_name              = var.regional_domain
     origin_access_control_id = aws_cloudfront_origin_access_control.access_control.id
-    origin_id                = var.regional_domain
+    origin_id                = var.website_endpoint
   }
 
   aliases = [var.domain_name]

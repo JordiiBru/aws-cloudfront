@@ -40,6 +40,12 @@ variable "bucket_origin_id" {
   default     = ""
 }
 
+variable "website_endpoint" {
+  description = "S3 bucket website endpoint."
+  type        = string
+  default     = ""
+}
+
 variable "regional_domain" {
   description = "The regional domain name of the hosting S3 bucket."
   type        = string
