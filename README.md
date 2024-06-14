@@ -2,7 +2,7 @@
 
 Terraform module to create a CloudFront distribution for a hosting S3 bucket with optional configurations.
 
-## Required Variables
+## Common Variables
 
 | Name      | Description                                                    | Type   | Validation                                      | Default  | Required  |
 |-----------|----------------------------------------------------------------|--------|-------------------------------------------------|----------|-----------|
