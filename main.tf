@@ -3,8 +3,8 @@ resource "aws_cloudfront_distribution" "main_distribution" {
   default_root_object = "index.html"
 
   origin {
-    domain_name              = var.website_endpoint
-    origin_id                = var.regional_domain
+    domain_name = var.website_endpoint
+    origin_id   = var.regional_domain
 
     custom_origin_config {
       http_port                = 80
@@ -21,9 +21,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
     }
   }
 
-
-
-  aliases = [var.domain_name]
+  aliases = ["${var.subdomain}.jordibru.cloud"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -53,7 +51,7 @@ resource "aws_cloudfront_distribution" "main_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = var.cert_id
+    acm_certificate_arn      = var.cert_arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }

@@ -1,4 +1,4 @@
-# REQUIRED VARIABLES
+# COMMON VARIABLES
 
 variable "stage" {
   description = "The stage of development (e.g., test, dev, staging, prod)."
@@ -34,37 +34,22 @@ variable "owner" {
 
 # CUSTOM VARIABLES
 
-variable "bucket_origin_id" {
-  description = "The ID of the hosting S3 bucket origin."
-  type        = string
-  default     = ""
-}
-
 variable "website_endpoint" {
   description = "S3 bucket website endpoint."
   type        = string
-  default     = ""
 }
 
 variable "regional_domain" {
   description = "The regional domain name of the hosting S3 bucket."
   type        = string
-  default     = ""
 }
 
-variable "cert_id" {
+variable "cert_arn" {
   description = "The ARN of the SSL certificate to attach to the CloudFront distribution."
   type        = string
-  default     = ""
 }
 
-variable "domain_name" {
-  description = "The name of the domain."
+variable "subdomain" {
+  description = "The name of the subdomain."
   type        = string
-  default     = ""
-
-  validation {
-    condition     = length(var.domain_name) >= 3
-    error_message = "You must define a domain name with at least three characters."
-  }
 }
