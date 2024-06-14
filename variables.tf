@@ -52,4 +52,9 @@ variable "cert_arn" {
 variable "subdomain" {
   description = "The name of the subdomain."
   type        = string
+
+  validation {
+    condition     = length(var.subdomain) >= 3
+    error_message = "You must define a subdomain name with at least three characters."
+  }
 }

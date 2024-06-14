@@ -12,12 +12,12 @@ Terraform module to create a CloudFront distribution for a hosting S3 bucket wit
 
 ## Custom Variables
 
-| Name               | Description                                                              | Type   | Validation | Default | Required |
-|--------------------|--------------------------------------------------------------------------|--------|------------|---------|----------|
-| `website_endpoint` | S3 bucket website endpoint.                                              | string |            |         | yes      |
-| `regional_domain`  | The regional domain name of the hosting S3 bucket.                       | string |            |         | yes      |
-| `cert_arn`         | The ARN of the SSL certificate to attach to the CloudFront distribution. | string |            |         | yes      |
-| `subdomain`        | The name of the subdomain.                                               | string |            |         | yes      |
+| Name               | Description                                                              | Type   | Validation                                                       | Default | Required |
+|--------------------|--------------------------------------------------------------------------|--------|------------------------------------------------------------------|---------|----------|
+| `website_endpoint` | S3 bucket website endpoint.                                              | string |                                                                  |         | yes      |
+| `regional_domain`  | The regional domain name of the hosting S3 bucket.                       | string |                                                                  |         | yes      |
+| `cert_arn`         | The ARN of the SSL certificate to attach to the CloudFront distribution. | string |                                                                  |         | yes      |
+| `subdomain`        | The name of the subdomain.                                               | string | You must define a subdomain name with at least three characters. |         | yes      |
 
 ## Outputs
 
